@@ -1,0 +1,687 @@
+---
+title: "Deep Sequencing for Respiratory Pathogen Detection & Infection Diagnosis"
+subtitle: "<hr>"
+author: "Brendan J. Kelly, MD, MS"
+institute: "Infectious Diseases & Epidemiology<br><br>![](penn_logos/Penn-Shield-Logotype-White-over-Blue-RGB-Expanded.svg){width=160px}" 
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer-inferno-grids-fade-title.css
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    seal: false
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: "%current%"
+
+---
+exclude: true
+
+```{r setup, include=FALSE, echo=FALSE, message=FALSE, error=FALSE, include=FALSE, comment=FALSE}
+options(htmltools.dir.version = FALSE)
+xaringan::summon_remark()
+```
+
+```{r xaringan-tile-view, echo=FALSE, message=FALSE, error=FALSE, include=FALSE, comment=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_webcam()
+xaringanExtra::use_tachyons()
+xaringanExtra::use_animate_css()
+xaringanExtra::use_share_again()
+#xaringanExtra::use_scribble(pen_color = "#56106E")
+```
+
+---
+class: top left hide-count
+background-image: url(img/PXL_20211017_215933273_trim.jpeg)
+background-size: cover
+
+.fade-in[
+
+.move-top10[
+.title-text[Deep Sequencing for<br> Respiratory Pathogen Detection<br> & Infection Diagnosis]  
+]  
+  
+.callout-url-leftcorner[
+.title-nametext[
+Brendan J. Kelly, MD, MS  
+Infectious Diseases & Epidemiology  
+University of Pennsylvania  
+<br>
+<br>
+<!--- `r format(Sys.Date(), '%d %B %Y')`  --->
+]
+]
+]
+
+
+---
+
+## Disclosures  
+
+.pad-left[
+
+- No commercial support or conflicts of interest.    
+
+- Research supported by:  
+  
+    - NIAID: K23 AI121485    
+    
+    - CDC: BAA 200-2016-91964, BAA 200-2018-02919, BAA 200-2021-10986   
+  
+]
+
+
+---
+
+## Respiratory Tract Infection: Public Health Challenge       
+  
+.pad-left[  
+  
+- Lower respiratory tract infections (LRTIs) were the fourth leading cause of mortality for all ages in 2019 -- even before the global COVID-19 pandemic!    
+  
+- LRTIs account for nearly 4 million deaths annually.  
+  
+- Multidrug-resistant (MDR) bacterial LRTIs have been associated with increased reinfection risk and mortality, relative to non-resistant bacterial infections:  
+  
+    - effect of factors that increase risk for MDR (e.g., underlying lung disease)?  
+    
+    - effect on time to effective antimicrobial therapy?  
+    
+      ... is microbiologic diagnosis complete without resistance profile?   
+  
+]  
+  
+  
+.footnote[Vos et al. _Lancet_ 2020; Vincent et al. _JAMA_ 2009; Weiner et al. _MMWR_ 2016; Kumar et al. _Crit Care Med_ 2006]  
+  
+  
+
+---
+
+## Respiratory Tract Infection: Diagnostic Challenge       
+  
+.pad-left[  
+  
+- Challenges to sensitivity:  
+
+    - potential etiologies include viruses, bacteria, fungi  
+    
+    - low microbial biomass and/or fastidious organisms  
+    
+    - difficulty of sampling (e.g., nonproductive cough)  
+  
+- Challenges to specificity:  
+  
+    - all non-surgical samples contaminated by the upper airway  
+    
+      (bronchoscopic carryover even with protected-specimen brush)  
+
+  
+]  
+  
+.footnote[Charlson et al. _Am J Resp Crit Care_ 2011; Charlson et al. _PLoS One_ 2012; Dickson et al. _Ann Rev Physio_ 2016]  
+  
+  
+  
+---
+
+## Deep Sequencing for Culture-Free Diagnosis           
+  
+.pad-left[
+
+- Approach:  
+  
+    - extraction of nucleic acid from upper/lower respiratory specimen →   
+      16S rRNA gene or shotgun metagenomic sequencing   
+  
+- Potential advantages:      
+
+    - rapid (depending on bioinformatics) & less biased (but not unbiased)        
+    
+- Potential disadvantages:  
+
+    - low sensitivity: microbial DNA swamped by host   
+    
+    - misclassification risk: metagenomic assignment/assembly  
+    
+    - limited accuracy of genotype-based AMR prediction  
+
+
+]
+
+
+  
+  
+  
+---
+class: full-screen hide-count
+background-color: #FCF5E5
+
+
+<div class="grid-3-1">
+<div class="extension-tile gridset-a animated flipInY"><div>Sequence-Based<br>Pathogen<br>Detection</div></div>
+</div>
+
+
+
+
+
+---
+layout: false
+class: full-screen hide-count
+background-color: #FCF5E5
+
+
+<div class="grid-3-1">
+<div class="extension-tile gridset-a"><div>Sequence-Based<br>Pathogen<br>Detection</div></div>
+<div class="extension-tile gridset-b animated flipInX"><div>Microbial<br>Ecology &<br>Infection Diagnosis</div></div>
+</div>
+
+
+
+
+
+---
+layout: false
+class: full-screen hide-count
+background-color: #FCF5E5
+
+
+<div class="grid-3-1">
+<div class="extension-tile gridset-a"><div>Sequence-Based<br>Pathogen<br>Detection</div></div>
+<div class="extension-tile gridset-b"><div>Microbial<br>Ecology &<br>Infection Diagnosis</div></div>
+<div class="extension-tile gridset-c animated bounceInDown"><div>Dis/Advantages<br>of a Sequence-<br>First Strategy</div></div>
+</div>
+
+
+
+
+
+---
+layout: false
+class: full-screen hide-count
+background-color: #FCF5E5
+
+
+<div class="grid-3-1">
+<div class="extension-tile gridset-a"><div>Sequence-Based<br>Pathogen<br>Detection</div></div>
+<div class="extension-tile gridset-grey"><div>Microbial<br>Ecology &<br>Infection Diagnosis</div></div>
+<div class="extension-tile gridset-grey"><div>Dis/Advantages<br>of a Sequence-<br>First Strategy</div></div>
+</div>
+
+
+
+
+
+---
+exclude: true
+class: center middle
+
+```{r ggplot_plotly_raster, echo=FALSE, message=FALSE, error=FALSE, comment=FALSE, warning=FALSE, eval=TRUE, autodep=TRUE, fig.align='center', out.width="100%"}
+
+library(tidyverse)
+library(ggdag)
+library(patchwork)
+library(plotly)
+library(datasets)
+library(reshape2)
+
+data(volcano)
+
+df <- reshape2::melt(volcano)
+
+p <- ggplot(df, aes(Var1, Var2)) +
+  geom_raster(aes(fill=value)) +
+  scale_fill_distiller(palette = "Spectral", direction = -1) +
+  labs(x="West to East",
+       y="North to South",
+       title = "Elevation map of Maunga Whau",
+       fill = "Elevation") +
+  theme(text = element_text(family = 'Roboto'),
+        plot.title = element_text(hjust = 0.5))
+
+htmlwidgets::saveWidget(widget = ggplotly(p), file = "./figs/ggplot_plotly_raster_demo.html")
+
+
+```
+
+<iframe src="./figs/ggplot_plotly_raster_demo.html" width = "95%", height = "95%" framBorder="0"></iframe>
+
+
+
+---
+background-image: url(img/kelly_microbiome_2016_heatmap.png)
+background-size: 70%
+
+
+```{r kelly_2016_heat, echo=FALSE, message=FALSE, error=FALSE, comment=FALSE, eval=TRUE, autodep=TRUE, fig.align='center', out.height='95%'}
+#knitr::include_graphics(path = "./img/kelly_microbiome_2016_heatmap.png")
+```
+
+.footnote[Kelly et al. _Microbiome_ 2016]   
+
+
+
+---
+  
+## 16s rRNA Sequencing for Bacterial Pneumonia    
+  
+.pad-left[
+
+- concordance with clinical cultures:  
+
+    - 4/15 subjects with + LRT cultures  
+    
+    - 16S rRNA identifies all as dominant 24-72hrs before culture  
+
+- dominance of unknown clinical significance:  
+
+     - _Enterococcus faecalis_ domination post RSV pneumonia  
+     
+     - _Ureaplasma parvum_ in an immunocompromised host  
+
+- the "normal flora" problem: standards for ignoring expected taxa?  
+
+]
+
+.footnote[Kelly et al. _Microbiome_ 2016]   
+
+
+---
+background-image: url(img/pendleton_ajrccm_2017_top.png)
+background-size: contain
+
+
+
+.footnote[Pendleton et al. _AJRCCM_ 2017]   
+
+
+---
+background-image: url(img/pendleton_ajrccm_2017_bottom.png)
+background-size: contain
+
+
+
+.footnote[Pendleton et al. _AJRCCM_ 2017]   
+
+
+---
+  
+## 16s rRNA & Metagenomic Pathogen Detection      
+  
+.pad-left[
+
+- high sensitivity & early detection of culture-positive cases    
+
+- require tailored methods for _Mycobacteria_, fungi, viruses     
+
+- lots of dominance of unclear clinical significance:  
+  
+    - correlates with markers of inflammation and lung injury  
+    
+    - should this receive directed antibiotic treatment?  
+    
+    - byproduct of antibiotic treatment?  
+  
+]
+
+.footnote[Graf et al _JCM_ 2016; Abbas _Am J Transpl_ 2017; Kitsios et al. _Front Micro_ 2018; Langelier et al. _PNAS_ 2018; Zinter et al. _CID_ 2019; Dickson et al. _AJRCCM_ 2020; McGinniss et al. _J Heart Lung Transpl_ 2021]   
+
+
+
+---
+
+## Conclusions: Sequence-Based Pathogen Detection              
+  
+.pad-left[
+  
+- Advantages:      
+
+    - rapid & less biased        
+    
+- Disadvantages:  
+
+    - need new standard for "normal flora"  
+  
+    - no single extraction/sequencing modality: _Mycobacteria_, fungi, viruses  
+    
+      (efforts made to develop pipelines -- e.g., SURPI*)  
+    
+    - AMR prediction in its infancy  
+    
+- Best of both worlds with multiplex NAAT?    
+    
+]
+
+.footnote[Kelly et al. _Microbiome_ 2016; Kitsios et al. _Front Micro_ 2018; *Langelier et al. _PNAS_ 2018; Dickson et al. _AJRCCM_ 2020]   
+  
+  
+
+
+
+---
+layout: false
+class: full-screen hide-count
+background-color: #FCF5E5
+
+
+<div class="grid-3-1">
+<div class="extension-tile gridset-grey"><div>Sequence-Based<br>Pathogen<br>Detection</div></div>
+<div class="extension-tile gridset-b"><div>Microbial<br>Ecology &<br>Infection Diagnosis</div></div>
+<div class="extension-tile gridset-grey"><div>Dis/Advantages<br>of a Sequence-<br>First Strategy</div></div>
+</div>
+
+
+
+
+
+---
+background-image: url(img/kelly_microbiome_2016_alpha_simple.png)
+background-size: 70%
+
+
+.footnote[Kelly et al. _Microbiome_ 2016]   
+
+
+
+---
+  
+## Dominance, Diversity & Infection Risk        
+  
+.pad-left[
+
+- more comprehensive and quantitative approach permits:  
+
+    - <u>richness</u>: number of different species  
+    
+    - <u>evenness</u>: balance across observed species  
+    
+    - <u>diversity</u>: summary of richness & evenness  
+    
+    - <u>dominance</u>: > 30% or > 50% of sequence reads  
+    
+- 16S rRNA qPCR or other standard-based quantitation of DNA/RNA abundance    
+  
+  (use of cycle threshold values for SARS-CoV-2)  
+  
+]
+
+.footnote[Dickson et al. _Lancet Resp Med_ 2014; Kelly et al. _Microbiome_ 2016; Kitsios et al. _Front Micro_ 2018; Dickson et al. _AJRCCM_ 2020; Kitsios et al. _AJRCCM_ 2020; Harrigan et al. _CID_ 2021]   
+
+
+---
+background-image: url(figs/p_combined_mdi_crosssection_counterfact.png)
+background-size: contain
+
+
+
+.footnote[Harrigan et al. _CID_ 2021]   
+
+---
+background-image: url(figs/p_minimpute_persistent_mdi.png)
+background-size: contain
+
+
+
+.footnote[Harrigan et al. _CID_ 2021]   
+
+---
+background-image: url(figs/p_minimpute_compare_outcome_definitions_persistence.png)
+background-size: contain
+
+
+
+.footnote[Harrigan et al. _CID_ 2021]   
+
+---
+  
+## Dominance, Diversity & Infection Risk        
+  
+.pad-left[
+  
+- 83 subjects dependent on mechanical ventilation  
+
+- Sampled 1066 days to compare microbiome disruption indices (MDIs):  
+  
+    - cross-sectional MDIs (low Shannon diversity, high 16S rRNA gene qPCR) associated with risk for VA-LRTI, but poor predictors  
+
+    - persistent low Shannon diversity had per-day LRTI odds ratio of 1.36 (95% credible interval 1.10 to 1.72)
+
+    - observed association was consistent across multiple definitions of VA-LRTI  
+  
+  
+]
+
+.footnote[Harrigan et al. _CID_ 2021]   
+
+
+---
+
+## Conclusions: Microbial Ecology of Infection    
+  
+.pad-left[
+
+- Predictive utility of microbial community structure:    
+
+    - challenge of gold standard for pneumonia diagnosis
+    
+    - optimal utility with longitudinal measures/sampling  
+   
+    - independent of pathogen identification (strength & weakness)  
+    
+- Advantage of deep sequencing over multiplex NAAT.  
+  
+- Is it worth the work?
+  
+  
+]
+
+
+---
+layout: false
+class: full-screen hide-count
+background-color: #FCF5E5
+
+
+<div class="grid-3-1">
+<div class="extension-tile gridset-grey"><div>Sequence-Based<br>Pathogen<br>Detection</div></div>
+<div class="extension-tile gridset-grey"><div>Microbial<br>Ecology &<br>Infection Diagnosis</div></div>
+<div class="extension-tile gridset-c"><div>Dis/Advantages<br>of a Sequence-<br>First Strategy</div></div>
+</div>
+
+
+
+
+
+
+---
+
+## Deep Sequencing First?    
+  
+.pad-left[
+
+- Disadvantages:  
+
+    - need to redefine "normal flora" (specificity questions) 
+    
+    - broad sensitivity demands complex wet-bench & bioinformatic pipeline  
+    
+    - metagenomic AMR prediction is in early stages  
+
+- Advantages:  
+
+    - speed and sensitivity  
+    
+    - added predictive/diagnostic value of microbial community structure  
+    
+    - __pathogen tracking and infection control__ -- application to public health   
+
+]
+
+
+
+
+---
+background-image: url(figs/covid_cases_chloropleth.png)
+background-size: 30%
+background-position: 85% 50%
+
+## SARS-CoV-2 Variant Tracking     
+  
+.pull-left[
+
+- The value of extracted nucleic acids!  
+  
+- Draw on broad catchment of PennMedicine, led by Kyle Rodino, PhD:    
+  
+    - ~ 1500 SARS-CoV-2 NAATs per day
+    
+    - positives with Ct < 28, stratified by county and zip code   
+    
+    - ARTIC primer set to amplify → Illumina    
+    
+    - assembly, alignment, PANGO lineage    
+
+]
+
+.pull-right[
+
+```{r kelly_phila, echo=FALSE, message=FALSE, error=FALSE, comment=FALSE, eval=TRUE, autodep=TRUE, fig.align='center', out.width='65%'}
+#knitr::include_graphics(path = "./figs/covid_cases_chloropleth.png")
+```
+
+
+]
+
+
+
+---
+background-image: url(img/marques_arma_model.png)
+background-size: 80%
+background-position: 50% 90%
+
+.move-top5[
+```{r marques_key, echo=FALSE, message=FALSE, error=FALSE, comment=FALSE, eval=TRUE, autodep=TRUE, fig.align='center', out.width='70%'}
+knitr::include_graphics(path = "./img/marques_arma_model_key.png")
+```
+]
+
+.footnote[Marques et al. _medRxiv_ 2021]   
+
+
+---
+background-image: url(img/marques_vaccine_model.png)
+background-size: contain
+
+
+.footnote[Marques et al. _medRxiv_ 2021]   
+
+
+---
+layout: false
+class: full-screen hide-count
+background-color: #FCF5E5
+
+
+<div class="grid-3-1">
+<div class="extension-tile gridset-a animated flipInX"><div>Sequence-Based<br>Pathogen<br>Detection</div></div>
+<div class="extension-tile gridset-b animated flipInY"><div>Microbial<br>Ecology &<br>Infection Diagnosis</div></div>
+<div class="extension-tile gridset-c animated flipInX"><div>Dis/Advantages<br>of a Sequence-<br>First Strategy</div></div>
+</div>
+
+
+---
+
+## Conclusions  
+
+.pad-left[
+
+- Specificity challenges deep sequencing for respiratory pathogen identification:  
+
+    - nature of upper airway contamination  
+    
+    - need to redefine standards for "normal flora"
+  
+- Novel insights into microbial ecology provide alternate framework for infectious disease diagnosis: skip the CT scan and monitor lower respiratory bacterial community diversity/dominance?  
+  
+- As multiplex NAAT and diagnostic sequencing applications expand, opportunity to collaborate with infection control and public health colleagues to build bioinformatics infrastructure.  
+
+]
+
+
+---
+
+## Acknowledgements    
+
+.pull-left[
+- __ARES Group @ Penn__
+Laurel Glaser, Kyle Rodino, Sean Loughrey, Laura Cowden,   
+Magda Wernovsky, Jennifer Han, Erik Clarke, Michael David,
+Matt Ziegler, Lauren Dutcher, Ebbing Lautenbach, Jim Harrigan, Hatem Abdallah
+
+- __Bushman Laboratory @ Penn__
+Arwa Abbas, Aoife Roche, Andrew Marques,
+Aubrey Bailey, Jacob Leiby,
+Rick Bushman
+
+- __PennCHOP Microbiome Program__
+Lisa Mattei, Casey Hofstaedter, Huanjia Zhang, Kyle Bittinger
+
+]
+
+
+.pull-right[
+- __Collman Laboratory @ Penn__
+Ize Imai, Aurea Simon Soro, John McGinniss, Ron Collman
+
+- __Division of ID @ Penn__
+Ian Frank, Pablo Tebas, Robert Gross, Emily Blumberg
+
+- __Rutgers University & Penn DBEI__
+Jason Roy, Arman Oganisian
+  
+- __CDC Prevention Epicenters__
+Clifford McDonald, Alison Laufer Halpin
+  
+- __Funding__
+CDC BAAs 200-2016-91964, 200-2018-02919, 200-2021-10986;
+NIAID: K23 AI121485
+
+]
+
+.center[
+### brendank@pennmedicine.upenn.edu
+]
+
+
+
+---
+class: middle center hide-count
+background-image: url(img/PXL_20211017_215933273_trim.jpeg)
+background-size: cover
+
+.title-subtext[Questions?]
+
+.callout-url-bottom[  
+ <!-- .fade-in[<span style="font-size:0.5em; color:#113864">slides ↓ </span>] --> 
+<span style="color:black; link-color:black;">[bjklab.org](http://www.bjklab.org)</span>  
+<br>  
+]  
+
+
+---
+exclude: true
+
+## bjklab.org
+  
+.center[
+```{r bjk_website, echo=FALSE, message=FALSE, error=FALSE, comment=FALSE, eval=TRUE, autodep=TRUE, fig.align='center', out.width='95%'}
+knitr::include_url("http://bjklab.org")
+```
+]
+
+
